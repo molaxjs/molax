@@ -33,12 +33,13 @@ app.renderToFile("./index.html");
 Methods: `addComponent(component: Component)`, `renderToFile(path: String)`, `render()`
 <br>
 #### <b>Constructor Requirements:</b>
-Props {<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;title: String<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;style?: Path <b>as string</b><br> 
-&nbsp;&nbsp;&nbsp;&nbsp;script?: Path <b>as string</b><br> 
-          }
-<br>
+```
+Props {
+    title: String, 
+    style?: Path, // as string
+    script?: Path // as string 
+}
+```
 Usage: `new App(Props)`
 
 ### Component Class:
