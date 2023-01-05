@@ -7,15 +7,15 @@ const { App, Component } = require("molax");
 
 class AppComponent extends Component {
   render() {
-    return `
+    return (
       <div class="App">
         <h1>Hello, ${this.props.name}.</h1>
-        <br>
+        <br/>
         <p>${this.state.message}</p>
-        <br>
+        <br/>
         <i>${this.state.test}</i>
       </div>
-    `;
+    );
   }
 }
 
