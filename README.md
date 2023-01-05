@@ -26,7 +26,7 @@ component.setState({
   test: "*passed from state*"
 });
 app.addComponent(component);
-app.renderToFile("./tests/index.html");
+app.renderToFile("./index.html");
 ```
 
 *including a CSS file is required.*
