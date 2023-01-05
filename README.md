@@ -7,7 +7,7 @@ const { App, Component } = require("molax");
 
 class AppComponent extends Component {
   render() {
-    return (
+    return `
       <div class="App">
         <h1>Hello, ${this.props.name}.</h1>
         <br/>
@@ -15,7 +15,7 @@ class AppComponent extends Component {
         <br/>
         <i>${this.state.test}</i>
       </div>
-    );
+    `;
   }
 }
 
@@ -28,7 +28,28 @@ component.setState({
 app.addComponent(component);
 app.renderToFile("./index.html");
 ```
-
-*including a CSS file is required.*
+## Classes
+### App Class:
+Methods: `addComponent(component: Component)`, `renderToFile(path: String)`, `render()`
 <br>
-*javascript features coming soon*
+#### <b>Constructor Requirements:</b>
+```
+Props {
+    title: String, 
+    style?: Path, // as string
+    script?: Path // as string 
+}
+```
+Usage: `new App(Props)`
+
+### Component Class:
+Methods: `setState(state: object)`, `render()`
+<br>
+**NOTE:** *Render method requires being extended with*
+```js
+class ComponentName extends Component {
+```
+#### <b>Constructor Requirements:</b>
+`Props { /** as required by component */ }`
+<br>
+Usage: `new ComponentName(Props)`
