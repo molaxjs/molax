@@ -28,7 +28,27 @@ component.setState({
 app.addComponent(component);
 app.renderToFile("./index.html");
 ```
-
-*including a CSS file is required.*
+## Classes
+### App Class:
+Methods: `addComponent(component: Component)`, `renderToFile(path: String)`, `render()`
 <br>
-*javascript features coming soon*
+#### <b>Constructor Requirements:</b>
+Props {<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;title: String<br> 
+&nbsp;&nbsp;&nbsp;&nbsp;style?: Path <b>as string</b><br> 
+&nbsp;&nbsp;&nbsp;&nbsp;script?: Path <b>as string</b><br> 
+          }
+<br>
+Usage: `new App(Props)`
+
+### Component Class:
+Methods: `setState(state: object)`, `render()`
+<br>
+**NOTE:** *Render method requires being extended with*
+```js
+class ComponentName extends Component {
+```
+#### <b>Constructor Requirements:</b>
+`Props { /** as required by component */ }`
+<br>
+Usage: `new ComponentName(Props)`
