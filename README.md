@@ -7,7 +7,7 @@ const { App, Component } = require("molax");
 
 class AppComponent extends Component {
   render() {
-    return (
+    return `
       <div class="App">
         <h1>Hello, ${this.props.name}.</h1>
         <br/>
@@ -15,7 +15,7 @@ class AppComponent extends Component {
         <br/>
         <i>${this.state.test}</i>
       </div>
-    );
+    `;
   }
 }
 

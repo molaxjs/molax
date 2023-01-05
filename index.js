@@ -38,7 +38,18 @@ var App = /** @class */ (function (_super) {
         this.components.push(component);
     };
     App.prototype.render = function () {
-        return "\n      <!DOCTYPE html>\n      <html>\n      <head>\n        <meta charset=\"utf-8\">\n        <title>".concat(this.props.title, "</title>\n        <link rel=\"stylesheet\" href=\"").concat(this.props.style, "\">\n      </head>\n      <body>\n        ").concat(this.components.map(function (component) { return component.render(); }).join("\n"), "\n      </body>\n      </html>\n    ");
+        if (this.props.style && this.props.script) {
+            return "\n        <!DOCTYPE html>\n        <html>\n        <head>\n          <meta charset=\"utf-8\">\n          <title>".concat(this.props.title, "</title>\n          <link rel=\"stylesheet\" href=\"").concat(this.props.style, "\">\n          <script src=\"").concat(this.props.script, "\" defer></script>\n        </head>\n        <body>\n          ").concat(this.components.map(function (component) { return component.render(); }).join("\n"), "\n        </body>\n        </html>\n      ");
+        }
+        else if (this.props.style) {
+            return "\n        <!DOCTYPE html>\n        <html>\n        <head>\n          <meta charset=\"utf-8\">\n          <title>".concat(this.props.title, "</title>\n          <link rel=\"stylesheet\" href=\"").concat(this.props.style, "\">\n        </head>\n        <body>\n          ").concat(this.components.map(function (component) { return component.render(); }).join("\n"), "\n        </body>\n        </html>\n      ");
+        }
+        else if (this.props.script) {
+            return "\n        <!DOCTYPE html>\n        <html>\n        <head>\n          <meta charset=\"utf-8\">\n          <title>".concat(this.props.title, "</title>\n          <script src=\"").concat(this.props.script, "\" defer></script>\n        </head>\n        <body>\n          ").concat(this.components.map(function (component) { return component.render(); }).join("\n"), "\n        </body>\n        </html>\n      ");
+        }
+        else {
+            return "\n        <!DOCTYPE html>\n        <html>\n        <head>\n          <meta charset=\"utf-8\">\n          <title>".concat(this.props.title, "</title>\n        </head>\n        <body>\n          ").concat(this.components.map(function (component) { return component.render(); }).join("\n"), "\n        </body>\n        </html>\n      ");
+        }
     };
     App.prototype.renderToFile = function (filePath) {
         fs.writeFileSync(filePath, this.render());
