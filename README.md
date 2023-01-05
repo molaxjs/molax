@@ -3,7 +3,7 @@ Molax is a new fast framework, that compiles to a pure HTML file.
 
 Example App.js: 
 ```js
-const { App, Component } = require("../index");
+const { App, Component } = require("molax");
 
 class AppComponent extends Component {
   render() {
