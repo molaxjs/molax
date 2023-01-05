@@ -1,6 +1,6 @@
 {
   "name": "molax",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Molax { App, Component }",
   "main": "index.js",
   "scripts": {
