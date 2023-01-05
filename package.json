@@ -1,0 +1,11 @@
+{
+  "name": "molax",
+  "version": "1.0.2",
+  "description": "Molax { App, Component }",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./tests/index.js"
+  },
+  "author": "Mahir Molai",
+  "license": "MIT"
+}
