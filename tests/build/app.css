@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    color: white;
+}
+
+.App {
+    display: flex;
+    background: #1e1e1e;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 7px;
+    width: 100vw;
+    height: 100vh;
+}
+
+h1 {
+    font-size: 56px;
+}
+
+p {
+    font-size: 24px;
+}

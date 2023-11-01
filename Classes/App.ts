@@ -6,6 +6,8 @@ class App extends Component {
     components: Array<any>;
     constructor(props: object) {
       super(props);
+      this.props.script2 = this.props.script.slice(1);
+      this.props.style2 = this.props.style.slice(1);
       this.components = [];
     }
   
@@ -75,6 +77,19 @@ class App extends Component {
   
     renderToFile(filePath: string) {
       fs.writeFileSync(filePath, this.render());
+      
+      if(this.props.script && this.props.style) {
+        const script = fs.readFileSync(`./tests${this.props.script2}`, "utf-8");
+        const style = fs.readFileSync(`./tests${this.props.style2}`, "utf-8");
+        fs.writeFileSync(`./tests/build${this.props.script2}`, script);
+        fs.writeFileSync(`./tests/build${this.props.styl2e}`, style);
+      } else if(this.props.script2 && !this.props.style2) {
+        const script = fs.readFileSync(`./tests${this.props.script2}`, "utf-8");
+        fs.writeFileSync(`./tests/build${this.props.script2}`, script);
+      } else if(this.props.style2 && !this.props.script2) {
+        const style = fs.readFileSync(`./tests${this.props.style2}`, "utf-8");
+        fs.writeFileSync(`./tests/build${this.props.style2}`, style);
+      } 
     }
 }
 

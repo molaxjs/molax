@@ -17,7 +17,7 @@ class TestComponent extends Component {
 const component = new TestComponent({ name: "Molax" });
 component.setState({
   message: "Welcome To Molax. Edit App.js to get started.",
-  test: "*passed from state*"
+  test: "*this is a test of the state functionality*"
 });
 
 module.exports = component;
